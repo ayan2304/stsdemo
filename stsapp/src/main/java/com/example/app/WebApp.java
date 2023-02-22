@@ -9,7 +9,7 @@ import com.example.app.entity.Empleado;
 import com.example.app.repository.EmpleadoRepository;
 
 @SpringBootApplication
-public class WebApp  implements CommandLineRunner{
+public class WebApp implements CommandLineRunner{
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebApp.class, args);

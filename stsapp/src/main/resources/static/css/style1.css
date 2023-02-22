@@ -87,17 +87,60 @@ table, th, td {
  	 padding:10px;
 }
 
+
+
+.weatherBody {
+	margin: 0;
+	padding: 0;
+	background-color: #e7c6b2;
+	
+}
+
 .weathElement {
 	margin: 10px;
 	font-family: 'Gentium Book Plus', serif;
 	color: #d84e48;
 	font-size: 32px;
+
+
 }
 
- .sides p {
+
+
+
+.place {
+	color: black;
+}
+
+
+
+.temp {
+	column-count:3;
+	column-gap:100px;
+}
+
+.temp_left {
+	font-size: 22px;
+	margin-top: 24px;
+}
+
+.temp_center{
+	font-size: 48px;
+}
+
+.temp_right {
+	font-size: 22px;
+	padding-top: 20px;
+}
+
+
+span.desc {
+	font-size: 20px;
+}
+.sides p {
  	text-align: justify;
  	font-size: 32px;
- }
+}
 
 p.left {
 	float:left;
@@ -113,4 +156,5 @@ img.left {
 img.right {
 	float:right;
 }
+
 
