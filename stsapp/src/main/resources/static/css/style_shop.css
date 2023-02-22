@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&family=Montserrat:wght@500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252A;
+}
+
+.web_name h1 {
+	font-family: 'Gentium Book Plus', serif;
+	color: #d84e48;
+	font-size: 45px;
+	
+	
+}
+
+
+li, a, button {
+	font-family: "Monsterrat", sans-serif;
+	font-weight: 500;
+	font-size: 23px;
+	color: #f3f6fc;
+	text-decoration: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	
+}
+
+.nav_links {
+	list-style: none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+.nav_links li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+	color: #d84e48;	
+}
+
+.cta button {
+	padding: 9px 27px;
+	background-color: #f1a747;
+	border: none;
+	border-radius: 40px;
+	transition: all 0.3s ease 0s;
+}
+
+.cta button:hover {
+	background-color: #d84e48;
+}
+
+
+
+.msg_welcome h1 {
+	line-height: 0.8;
+	font-family: 'Gentium Book Plus', serif;
+	color: #FFE4C4;
+	font-size: 80px;
+}
+
+
+
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="htttp://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Management</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+
+function signup() {
+	  alert("CLICK!");
+}
+	
+
+$(document).ready(function(){
+
+	var message ="";
+	var numbers = /([0-9])/;
+	var letters = /([a-z])/;
+	var letters_up = /([A-Z])/;
+	var symbols = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+	
+    document.querySelector('#bt_signup').disabled = true;
+
+    $("#pass_input").on("keyup", function() {
+
+        let cond_length = false
+		let cond1 = this.value.match(letters);
+		let cond2 = this.value.match(numbers);
+		let cond3 = this.value.match(letters_up);
+		let cond4 = this.value.match(symbols);
+       	
+    	document.getElementById("pass_low").style.color = "blue";
+    	document.getElementById("pass_num").style.color = "blue";
+    	document.getElementById("pass_up").style.color = "blue";
+    	document.getElementById("pass_symb").style.color = "blue";
+
+		
+        if(this.value.length >= 6) {
+        	document.getElementById("message").style.color = "green";
+            document.getElementById("message").innerHTML = "&#x2713; PASSWORD CONTAINS MORE THAN 6";
+            cond_length = true;
+        }
+        else {
+        	document.getElementById("message").style.color = "red";
+            document.getElementById("message").innerHTML = "PASSWORD CONTAINS LESS THAN 6";
+            cond_length = false;
+        }
+        
+        if(cond1) {
+            document.getElementById("pass_low").innerHTML = "&#x2713; password contains LETTERS";
+        }
+        else {
+        	document.getElementById("pass_low").innerHTML = "";
+        }
+
+        if(cond2) {
+            document.getElementById("pass_num").innerHTML = "&#x2713; password contains NUMBERS";
+        }
+        else {
+            document.getElementById("pass_num").innerHTML = "";
+        }
+
+        if(cond3) {
+            document.getElementById("pass_up").innerHTML = "&#x2713; password contains UPPERCASE LETTERS";
+        }
+        else {
+            document.getElementById("pass_up").innerHTML = "";
+        }
+        
+        if(cond4) {
+            document.getElementById("pass_symb").innerHTML = "&#x2713; password contains SYMBOLS";   
+        }
+        else {
+            document.getElementById("pass_symb").innerHTML = "";
+        }
+        
+        if (cond_length && cond1 && cond2 && cond3 && cond4) {
+            document.querySelector('#bt_signup').disabled = false;
+        }
+        else {
+            document.querySelector('#bt_signup').disabled = true;
+        } 
+    });
+    
+ });
+
+
+	
+
+
+</script>
+</head>
+<link rel="stylesheet" href="" th:href="@{/css/style1.css}">
+
+<body>
+	<div th:insert= "~{fragments/navbar :: navbar}"/> </div>
+	
+	<form th:action ="@{/form/guardar}" method = "post"> 
+	<h1>Crear nuevo empleado</h1>
+		Nombre: <input 
+					type="text" 
+					required = "required" 
+					name="nombre" 
+					th:text ="${nombre}"/> 
+					<br><br> 
+					
+		Apellido: <input 
+					type="text" 
+					required = "required" 
+					name="apellido" 
+					th:text ="${apellido}"/> 
+					<br><br> 
+								 
+		Cargo: <input 
+					type="text" 
+					required = "required" 
+					name="cargo" 
+					th:text ="${cargo}"/> 
+					<br><br>  
+		Edad : <input 
+					type="number" 
+					required = "required" 
+					name="edad" 
+					th:text ="${edad}"/> 
+					<br><br>  
+	
+		<button type = "submit">Enviar</button>
+	</form>
+	
+	<h2 class="text-center">Password</h2>
+    <form>
+            <label>Password:</label> 
+            <input
+            	id = "pass_input"
+            	type= "password"
+                name= "password"  
+            />
+
+            <p id ="pass_low"></p>
+            <p id ="pass_num"></p>
+            <p id ="pass_up" ></p>
+            <p id ="pass_symb"></p>
+			<p id ="message"></p>
+            <button type = "button" id ="bt_signup" onclick= "signup()">SIGN UP</button>
+    </form>    
+
+
+
+</body>
+</html>

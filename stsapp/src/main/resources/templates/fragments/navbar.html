@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NavigationBar</title>
+
+</head>
+
+<body>
+<!--  NAVBAR  -->
+	<div class ="navbar" th:fragment= "navbar">
+		<div>
+			<ul>
+			
+				<li>
+					<a href = "/form/list">Index</a>
+				</li>
+				<li>
+					<a href = "/form/list/add">Crear nuevo</a>
+				</li>
+				<li>
+					<a href = "/form/pokeapi">Pokemons</a>
+				</li>
+				<li>
+					<a href = "/weather">Weather</a>
+				</li>
+
+			</ul>			
+		</div>
+	</div>
+</body>
+</html>

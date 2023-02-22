@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="htttp://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Weather </title>
+</head>
+
+<link rel="stylesheet"  href="/css/style1.css">
+<body>
+
+	<div th:insert= "~{fragments/navbar :: navbar}"/> </div>
+	
+
+	<!-- <p th:text = "${weather}"></p> -->
+	<div class ="weathElement">
+		<span th:text = "${weather.description}"></span>
+		<br>
+		<img width= "150" th:src ="@{'http://openweathermap.org/img/wn/' + ${weather.icon} + '@4x.png'}">
+		<div class ="temp">
+			<span class ="num" th:text = "${weather.main.temp}"></span>
+			<span class ="celsius"> &#8451;</span>
+		</div>
+		<div class ="press">
+			<p>Presion:</p>
+				<span th:text = "${weather.main.pressure}"></span>
+				<span>hPa</span>
+			<p>Humedad:</p>
+				<span th:text = "${weather.main.humidity}"></span>
+				<span>%</span>
+		</div>
+		
+		<div class = "sides">
+			<p class ="left" th:text = "${weather.sys.sunrise}"></p>
+			<img class ="left" width ="50" src="/images/sunrise.png">
+			
+			<p class ="right" th:text = "${weather.sys.sunset}"></p>
+			<img class ="right" width ="50" src="/images/sunset.png">
+			
+		</div>
+		
+	
+	</div>
+
+
+
+
+</body>
+</html>

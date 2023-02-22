@@ -1,0 +1,116 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&family=Montserrat:wght@500&display=swap');
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: Verdana;
+}
+
+form {
+	border: 3px solid #f1f1f1;
+	margin: 30px;
+	padding: 5px;
+}
+
+p {
+	font-size: 14px;
+}
+
+button {
+	width: 40%;
+	margin: 10px;
+	background-color: white;
+	color: black;
+}
+
+button:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+button:disabled,
+button[disabled] {
+	
+	border: 1px solid white;
+	background-color: #cccccc;
+	color: #666666;
+	
+}
+
+
+/* NAVBAR */
+.navbar {
+	
+	width: 600px;
+	
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	
+	padding-left:30px;	
+	
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+	
+}
+
+
+/* Tabla de empleados */
+
+table {
+	margin: 30px;
+}
+
+table, th, td {
+ 	 border:1px solid black;
+ 	 border-collapse: collapse;
+ 	 padding:10px;
+}
+
+.weathElement {
+	margin: 10px;
+	font-family: 'Gentium Book Plus', serif;
+	color: #d84e48;
+	font-size: 32px;
+}
+
+ .sides p {
+ 	text-align: justify;
+ 	font-size: 32px;
+ }
+
+p.left {
+	float:left;
+}
+
+p.right {
+	float:right;
+}
+
+img.left {
+	float:left;
+}
+img.right {
+	float:right;
+}
+

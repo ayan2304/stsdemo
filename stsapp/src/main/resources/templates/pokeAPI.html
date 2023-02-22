@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="htttp://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Management</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+
+function getdata() {
+	  
+	  var pokeArray =[];
+	  
+	  <!-- LLAMAR POKE API -->
+	
+	/* $.ajax({
+		
+			type: 'GET',
+			url: 'https://pokeapi.co/api/v2/pokemon',
+			dataType: 'json',
+			success: function(data) {
+				pokeArray = data.results;
+				buildTable(pokeArray);
+			}
+		});  
+	*/
+	
+		$.ajax({
+			type: 'GET',
+			url: '/form/pokeapi/download',
+			success: function(data) {
+				pokeArray = data;
+				buildTable(pokeArray);
+				console.log(pokeArray)
+			}
+		})
+
+
+	  
+		function buildTable(pokeArray) {
+			var table = document.getElementById("table_poke");
+			
+			for (var i = 0; i < pokeArray.length; i++) {
+				var row = `<tr>
+								<td>${pokeArray[i].id}</td>
+								<td>${pokeArray[i].name}</td>
+								<td><a href="${pokeArray[i].url}">${pokeArray[i].url}</a></td>
+								<td><img src="https://raw.githubusercontent.com/PokeAPI
+								/sprites/master/sprites/pokemon/other/official-artwork/${pokeArray[i].id}.png" 
+								width="150"></td>
+						   </tr>`
+				table.innerHTML += row;
+			}
+		} 
+}
+
+
+
+	
+
+
+</script>
+</head>
+<link rel="stylesheet" href="" th:href="@{/css/style1.css}">
+
+<body>
+	<div th:insert= "~{fragments/navbar :: navbar}"/> </div>
+
+	<h1> LLAMADA A POKEAPI </h1><br>
+
+    <button type = "button" onclick ="getdata()">Descargar tabla de pokemons</button>
+    <table id ="table_poke">
+    
+    
+    </table>
+
+
+
+
+</body>
+</html>

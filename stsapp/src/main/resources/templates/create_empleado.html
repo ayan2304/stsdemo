@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="htttp://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Management</title>
+</head>
+<link rel="stylesheet"  href="/css/style1.css">
+
+<body>
+	<div th:insert= "~{fragments/navbar :: navbar}"/> </div>
+	
+	<form th:action="@{/form/list}" th:object="${empleado}" method="POST">
+	
+	<h1>Crear nuevo empleado</h1>
+		Nombre: <input 
+					type="text" 
+					required = "required" 
+					name="nombre" 
+					th:field="*{nombre}"/> 
+					<br><br> 
+					
+		Apellido: <input 
+					type="text" 
+					required = "required" 
+					name="apellido" 
+					th:field ="*{apellido}"/> 
+					<br><br> 
+								 
+		Cargo: <input 
+					type="text" 
+					required = "required" 
+					name="cargo" 
+					th:field ="*{cargo}"/> 
+					<br><br>  
+		Edad : <input 
+					type="number" 
+					required = "required" 
+					name="edad" 
+					th:field ="*{edad}"/> 
+					<br><br>  
+	
+		<button type = "submit">Enviar</button>
+	</form>
+	
+	
+</body>
+</html>

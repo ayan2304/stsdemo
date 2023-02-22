@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="htttp://www.thymeleaf.org">
+<head>
+
+
+<meta charset="ISO-8859-1">
+<title> Management</title>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- JQUERY SCRIPT PARA FILTRAR -->
+<script>
+$(document).ready(function(){
+  $("#InputSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#TableEmpleo tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</head>
+<link rel="stylesheet"  href="/css/style1.css">
+
+
+<body>
+
+<div th:insert= "~{fragments/navbar :: navbar}"/> </div>
+
+<h1>La tabla de empleados</h1>
+<input id="InputSearch" type="text" placeholder="Buscar...">
+	
+	<table>
+			<thead>
+				<tr>
+					<th> ID </th>
+					<th> Nombre </th>
+					<th> Apellido </th>
+					<th> Cargo</th>
+					<th> Edad </th>
+					<th> Acciones </th>
+
+				</tr>
+			</thead>
+	
+	<tbody id ="TableEmpleo">	
+	
+				<tr th:each="empl: ${list_empl}">
+				
+					<td th:text = "${empl.id}"></td>
+					<td th:text = "${empl.nombre}"></td>
+					<td th:text = "${empl.apellido}"></td>
+					<td th:text = "${empl.cargo}"></td>
+					<td th:text = "${empl.edad}"></td>
+					<td>
+						<a th:href = "@{list/del/{id}(id=${empl.id})}"> Delete </a>
+						<a th:href = "@{list/edit/{id}(id=${empl.id})}"> Edit </a>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	
+	
+	<!--   <a href = "/form/index">Crear nuevo empleado</a>		-->
+<!--  
+	<button type="button">true</button>
+	
+	<div th:if="${mostrar}">
+		<ul th:each="prueba : ${lista}">
+			<li th:text="${prueba}"></li>
+		</ul>
+	</div>
+
+ -->
+	
+</body>
+</html>
